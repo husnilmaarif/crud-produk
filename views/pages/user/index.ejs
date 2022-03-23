@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List User page</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <%- include('../../components/navbar') %>
+    <a href="/users/create">register</a>
+    <h1>daftar user (<%= users.length %>)</h1>
+    <ul>
+      <% if(users.length > 0){ %> <% users.forEach((user) => { %>
+      <li><a href="/users/<%= user.id %>"> <%= user.name %></a></li>
+      <% }) %> <% } else { %>
+      <p>data user masih kosong</p>
+      <% } %>
+    </ul>
+    <%- include('../../components/footer') %>
+  </body>
+</html>
